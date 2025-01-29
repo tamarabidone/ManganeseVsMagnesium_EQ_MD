@@ -1,0 +1,1 @@
+The .bash and .sh files are used to start the data extraction scripts (.py or .tcl) in a HPC environment using the SLURM scheduler.
