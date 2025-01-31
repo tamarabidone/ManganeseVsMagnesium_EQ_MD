@@ -1,0 +1,58 @@
+;
+;	File 'topol.top' was generated
+;	By user: unknown (1000)
+;	On host: DESKTOP-HPCUQF9
+;	At date: Tue Apr  2 13:47:10 2024
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	              :-) GROMACS - gmx pdb2gmx, 2022.5-plumed_2.8.3 (-:
+;	
+;	Executable:   /usr/local/gromacs/bin/gmx
+;	Data prefix:  /usr/local/gromacs
+;	Working dir:  /mnt/c/Users/and_r/OneDrive - University of Utah/BidoneLab/integrin/1_HeadpieceTest/state4/5
+;	Command line:
+;	  gmx pdb2gmx -f state4.pdb -o start.pdb -ignh
+;	Force field was read from the standard GROMACS share directory.
+;
+
+; Include forcefield parameters
+#include "charmm36-jul2022.ff/forcefield.itp"
+
+; Include chain topologies
+#include "topol_Protein_chain_C.itp"
+#include "topol_Protein_chain_D.itp"
+#include "topol_Protein_chain_J.itp"
+#include "topol_Ion_chain_C2.itp"
+#include "topol_Ion_chain_D2.itp"
+
+; Include water topology
+#include "charmm36-jul2022.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "charmm36-jul2022.ff/ions.itp"
+
+[ system ]
+; Name
+INTEGRIN ALPHA-IIB; INTEGRIN BETA-3; RGD PEPTIDE in water
+
+[ molecules ]
+; Compound        #mols
+Protein_chain_C     1
+Protein_chain_D     1
+Protein_chain_J     1
+Ion_chain_C2        1
+Ion_chain_D2        1
+SOL                 3
+SOL                 3
+SOL         32724
+NA               107
+CL               100
