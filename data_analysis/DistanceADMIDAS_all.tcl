@@ -1,7 +1,6 @@
 # RC Feb 5, 2024
 # 
-# The opening-closing of the active site and the change in position of the terminal segment of the bI were determined by measuring
-# the distances of Asp224-Mn1 (ADMIDAS) 
+# Measure the distance of the ADMIDAS ion from residues 123, 126, 127 and 335 in the B-I domain. 
 mol new trajout.pdb waitfor all
 mol addfile trajout.xtc waitfor all
 set outfile [open ./DistanceADMIDAS_all.dat w]

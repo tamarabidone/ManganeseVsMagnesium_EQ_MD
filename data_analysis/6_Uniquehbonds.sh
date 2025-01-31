@@ -13,8 +13,8 @@
 #SBATCH --array=1-8
 
 shopt -s extglob
-folders=("state1" "state2" "state3b" "state4" "state5" "state6" "state7" "state8")
-conditions="6"
+folders=("state1" "state2" "state3" "state4" "state5" "state6" "state7" "state8")
+conditions="1 5"
 
 # state1
 if [ $SLURM_ARRAY_TASK_ID -eq 1 ]
