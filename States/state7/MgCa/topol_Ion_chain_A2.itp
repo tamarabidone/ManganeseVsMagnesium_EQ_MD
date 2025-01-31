@@ -1,0 +1,39 @@
+;
+;	File 'topol_Ion_chain_A2.itp' was generated
+;	By user: unknown (1000)
+;	On host: DESKTOP-HPCUQF9
+;	At date: Mon Apr  1 13:51:59 2024
+;
+;	This is a include topology file
+;
+;	Created by:
+;	              :-) GROMACS - gmx pdb2gmx, 2022.5-plumed_2.8.3 (-:
+;	
+;	Executable:   /usr/local/gromacs/bin/gmx
+;	Data prefix:  /usr/local/gromacs
+;	Working dir:  /mnt/c/Users/and_r/OneDrive - University of Utah/BidoneLab/integrin/1_HeadpieceTest/state7/1
+;	Command line:
+;	  gmx pdb2gmx -f state7.pdb -o start.pdb -p topol.top -ignh
+;	Force field was read from the standard GROMACS share directory.
+;
+
+[ moleculetype ]
+; Name            nrexcl
+Ion_chain_A2        3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue 2004 Cal rtp CAL  q +2.0
+     1        CAL   2004    Cal    CAL      1          2      40.08   ; qtot 2
+; residue 2005 Cal rtp CAL  q +2.0
+     2        CAL   2005    Cal    CAL      2          2      40.08   ; qtot 4
+; residue 2006 Cal rtp CAL  q +2.0
+     3        CAL   2006    Cal    CAL      3          2      40.08   ; qtot 6
+; residue 2007 Cal rtp CAL  q +2.0
+     4        CAL   2007    Cal    CAL      4          2      40.08   ; qtot 8
+
+; Include Position restraint file
+#ifdef POSRES
+#include "posre_Ion_chain_A2.itp"
+#endif
+
