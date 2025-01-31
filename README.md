@@ -17,7 +17,7 @@ This repository contains simulation data for 8 activation states of integrin alp
 
 ## Contact
 
-For questions or further information, please contact [Your Name] at [your_email@example.com].
+For questions or further information, please contact Tamara Bidone at tamarabidone@sci.utah.edu and/or Robert Coffman at r.coffman@utah.edu.
 
 
 
@@ -25,11 +25,11 @@ The files in this repository are for the paper titled: "Mn2+ accelerates ligand 
 
 List of File Types:
 .xtc: Trajectory files are in .xtc format and have been reduced considerably to fit in this repository.
-.pdb:
-.gro:
-.tpr
+.pdb: Coordonate file
+.gro: Coordinate file
+.tpr: topology file
 .inp
-.mdp
+.mdp: molecular dynamics parameter file (defines conditions of the MD simulations)
 .tcl
 .py
 .matlab
