@@ -7,14 +7,14 @@ clc
 close all
 
 % fill in the rest of the root folders path
-root1=".\ManganeseVsMagnesium_EQ_MD\States\";
-
+%root1=".\ManganeseVsMagnesium_EQ_MD\States\";
+root1="D:\OneDrive - University of Utah\BidoneLab\integrin\1_HeadpieceTest\";
 
 
 % work code
 openfile = "DistanceAlpha7"; % 
 states =  ["1" "2" "3" "4" "5" "6" "7" "8"] ;
-subfolder= ["MgCa" "Mn"];
+subfolder= ["1" "5"];
 replicas=string(1:25);
 time=1200;
 for subs=1:size(subfolder,2)    
@@ -54,7 +54,7 @@ for state=1:length(states)
             end
             end
         end
-        replicastart(state,conditions) = dataall(1,3) - dataall(1,2);
+        %replicastart(state,conditions) = dataall(1,3) - dataall(1,2);
         datareplica(:,conditions,state) = mean(replicadata((time-40):time,:,2),'omitnan') - mean(replicadata((time-40):time,:,1),'omitnan');
         datareplicastandardeviation(:,conditions,state) = std(replicadata((time-40):time,:,2) - replicadata((time-40):time,:,1));
     end
@@ -165,7 +165,7 @@ f=figure;
 hold on
 hb = bar(X,mostsamplesmatrix,0.80,'FaceColor','flat');
 ax=gca;
-plot(X,replicastart+4.884072,'k_','markersize',15,'linewidth',1)
+%plot(X,replicastart+4.884072,'k_','markersize',15,'linewidth',1)
 for k = 1:size(subfolder,2)
     hb(k).CData = repmat(coloring{k},size(mostsamplesmatrix,2),1);
 end
@@ -192,7 +192,7 @@ ylim([-0.8,9.5]);
 set(gcf, 'Units', 'Inches', 'Position', [1, 1, 3.04, 1.25])
 set(gcf,'PaperPositionMode','auto')
 hold off
-clearvars -except root1 subfolder dataindexing
+%clearvars -except root1 subfolder dataindexing
 walkername = fullfile(strcat(root1,"Fig4b_alpha7_",subfolder));
 print(walkername{1},'-r600','-dpng')
 
